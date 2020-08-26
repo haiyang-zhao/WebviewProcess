@@ -3,6 +3,8 @@ package com.zhy.webview;
 import android.content.Context;
 import android.content.Intent;
 
+import androidx.fragment.app.Fragment;
+
 import com.google.auto.service.AutoService;
 import com.zhy.common.autoservice.IWebViewService;
 import com.zhy.webview.utils.Constants;
@@ -18,5 +20,10 @@ public class WebViewServiceImpl implements IWebViewService {
             intent.putExtra(Constants.IS_SHOW_ACTION_BAR, showActionBar);
             context.startActivity(intent);
         }
+    }
+
+    @Override
+    public Fragment getWebViewFragment(String url, boolean enableRefresh) {
+        return WebViewFragment.createInstance(url, enableRefresh);
     }
 }

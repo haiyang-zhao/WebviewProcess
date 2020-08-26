@@ -1,4 +1,4 @@
-package com.zhy.base.autoservice;
+package com.zhy.base;
 
 import android.app.Application;
 
