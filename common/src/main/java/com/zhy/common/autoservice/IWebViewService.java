@@ -8,4 +8,6 @@ public interface IWebViewService {
     void startWebViewActivity(Context context, String url, String title, boolean showActionBar);
 
     Fragment getWebViewFragment(String url, boolean enableRefresh);
+
+    void startDemoHtml(Context context);
 }

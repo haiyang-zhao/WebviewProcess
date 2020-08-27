@@ -16,8 +16,6 @@ import com.kingja.loadsir.core.LoadService;
 import com.kingja.loadsir.core.LoadSir;
 import com.zhy.base.loadsir.ErrorCallback;
 import com.zhy.base.loadsir.LoadingCallback;
-import com.zhy.webview.client.AppWebViewChromeClient;
-import com.zhy.webview.client.AppWebViewClient;
 import com.zhy.webview.databinding.FragmentWebviewBinding;
 import com.zhy.webview.utils.Constants;
 
@@ -35,10 +33,8 @@ public class WebViewFragment extends Fragment implements WebViewCallback {
                              @Nullable Bundle savedInstanceState) {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_webview,
                 container, false);
-        mBinding.webview.getSettings().setJavaScriptEnabled(true);
 
-        mBinding.webview.setWebViewClient(new AppWebViewClient(this));
-        mBinding.webview.setWebChromeClient(new AppWebViewChromeClient(this));
+        mBinding.webview.registerWebViewCallBack(this);
         mBinding.smartrefreshlayout.setEnableRefresh(mEnableRefresh);
         mBinding.smartrefreshlayout.setEnableLoadMore(false);
         mLoadService = LoadSir.getDefault()

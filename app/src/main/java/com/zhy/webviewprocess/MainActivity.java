@@ -18,10 +18,11 @@ public class MainActivity extends AppCompatActivity {
             IWebViewService webViewService =
                     XiangxueServiceLoader.load(IWebViewService.class);
             if (null != webViewService) {
-                webViewService.startWebViewActivity(MainActivity.this,
-                        "https://www.baidu.com/",
-                        "DataBinding",
-                        true);
+//                webViewService.startWebViewActivity(MainActivity.this,
+//                        "https://www.baidu.com/",
+//                        "DataBinding",
+//                        true);
+                webViewService.startDemoHtml(this);
             }
         });
     }
